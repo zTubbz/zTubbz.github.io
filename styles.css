@@ -1,0 +1,74 @@
+/* Basic reset for styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0d0d;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    animation: background-flicker 0.3s infinite alternate;
+}
+
+@keyframes background-flicker {
+    0% {
+        background-color: #0d0d0d;
+    }
+    100% {
+        background-color: #191919;
+    }
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.85); /* Darker background */
+    padding: 60px 80px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
+    position: relative;
+    animation: shake 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-5px); }
+    100% { transform: translateX(5px); }
+}
+
+h1 {
+    font-size: 5rem;
+    color: #ff0000; /* Blood red */
+    text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #a9a9a9; /* Dark gray for RIP */
+    font-weight: lighter;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px #a9a9a9;
+}
+
+#ghost-message {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    font-style: italic;
+    opacity: 0.6;
+    margin-top: 20px;
+    animation: ghost-flicker 1.5s infinite alternate;
+}
+
+@keyframes ghost-flicker {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.2; }
+    100% { opacity: 0.6; }
+}
