@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Engineer - Tubbzy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-page">
+  <!-- Particles.js container -->
+  <div id="particles-js"></div>
+  
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo" id="logo-text">
+      Code Engineer<span class="blink"></span>
+    </div>
+    <ul class="nav-items">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Welcome!</h1>
+    
+    <!-- Main Introduction Box -->
+    <div class="code-box main-box">
+      <div class="code-box-header">
+        <span class="code-comment">// about.me</span>
+        <div class="code-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div class="code-box-content">
+        <p>This platform serves as a digital portfolio showcasing my past, current, and future development projects. As a Computer Studies student at SRJC, I'm passionate about creating innovative digital solutions while continuously expanding my technical skills.</p>
+      </div>
+    </div>
+    
+    <!-- Grid of Feature Boxes -->
+    <div class="boxes-grid">
+      <!-- Projects Box -->
+      <div class="code-box">
+        <div class="code-box-header">
+          <span class="code-comment">// projects.js</span>
+          <div class="code-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+        <div class="code-box-content">
+          <h3>Development Journey</h3>
+          <p>Detailed documentation of my projects and coding exploration, from initial concepts to finished applications.</p>
+          <div class="code-line"><span class="code-keyword">const</span> <span class="code-variable">status</span> = <span class="code-string">"Always Learning"</span>;</div>
+        </div>
+      </div>
+      
+      <!-- Portfolio Box -->
+      <div class="code-box">
+        <div class="code-box-header">
+          <span class="code-comment">// portfolio.css</span>
+          <div class="code-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+        <div class="code-box-content">
+          <h3>Active Projects</h3>
+          <p>Information about my current and completed projects, with demos and technical details.</p>
+          <div class="code-line"><span class="code-selector">.projects</span> { <span class="code-property">display</span>: <span class="code-value">flex</span>; }</div>
+        </div>
+      </div>
+      
+      <!-- Shop Box -->
+      <div class="code-box">
+        <div class="code-box-header">
+          <span class="code-comment">// shop.php</span>
+          <div class="code-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+        <div class="code-box-content">
+          <h3>Shop Section</h3>
+          <p>A dedicated experimental e-commerce section where I'm implementing online shop functionality as part of my learning process.</p>
+          <div class="code-line"><span class="code-keyword">$status</span> = <span class="code-string">"Coming Soon"</span>;</div>
+        </div>
+      </div>
+      
+      <!-- Contact Box -->
+      <div class="code-box">
+        <div class="code-box-header">
+          <span class="code-comment">// contact.json</span>
+          <div class="code-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+        <div class="code-box-content">
+          <h3>Connect & Collaborate</h3>
+          <p>Multiple ways to reach out for collaboration, questions, or professional inquiries. Just visit the contact page!</p>
+          <div class="code-line">{ <span class="code-string">"status"</span>: <span class="code-string">"Available"</span> }</div>
+        </div>
+      </div>
+      
+      <!-- Skills Box -->
+      <div class="code-box">
+        <div class="code-box-header">
+          <span class="code-comment">// skills.py</span>
+          <div class="code-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+        <div class="code-box-content">
+          <h3>Skills & Achievements</h3>
+          <p>Everything you need to know about my Computer Studies Career, summed up in one website.</p>
+          <div class="code-line">
+            <span class="code-keyword">for</span> <span class="code-variable">knowledge</span> <span class="code-keyword">in</span> <span class="code-variable">skillset</span>:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">print</span>(<span class="code-variable">knowledge</span>)
+          </div>
+        </div>
+      </div>
+    </div> <!-- End of boxes-grid -->
+  </div> <!-- End of content -->
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <p class="copyright">&copy; <span id="current-year"></span> Tubbzy. All rights reserved.</p>
+        <p class="tagline">Building the digital future one line of code at a time.</p>
+      </div>
+      <div class="footer-section social-links">
+        <a href="#" class="social-icon" title="GitHub"><i class="fa fa-github"></i></a>
+        <a href="#" class="social-icon" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+        <a href="#" class="social-icon" title="Twitter"><i class="fa fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="particles-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

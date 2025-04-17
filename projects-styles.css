@@ -1,0 +1,255 @@
+/* Custom styles for the projects page */
+:root {
+    --projects-accent: #ff00ff; /* Neon magenta */
+    --projects-accent-hover: #cc00cc;
+    --projects-highlight: #2a1a2a;
+    --darker: #0a0a0a; /* Ensure this variable is available */
+}
+
+/* Override some of the main styles for projects page */
+.content h1, 
+.section-title,
+.code-box-content h3 {
+    color: var(--projects-accent);
+}
+
+.logo {
+    color: var(--projects-accent);
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
+}
+
+.blink {
+    background-color: var(--projects-accent);
+}
+
+.code-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 0, 255, 0.4); /* Enhanced magenta glow */
+    border-color: var(--projects-accent);
+}
+
+.content h1:hover {
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.7);
+}
+
+/* Projects page specific styles */
+.section-title {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--projects-accent);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.project-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 0, 255, 0.6); /* Stronger magenta glow */
+    border-color: var(--projects-accent);
+    transition: all 0.3s ease;
+}
+
+.project-box .code-box-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tag {
+    background-color: var(--projects-highlight);
+    color: var(--projects-accent);
+    padding: 0.3rem 0.6rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background-color: var(--projects-accent) !important;
+    color: var(--darker) !important;
+}
+
+.code-line {
+    margin-top: auto;
+}
+
+/* Animation for tags */
+@keyframes tagPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.tag:hover {
+    animation: tagPulse 1s infinite;
+}
+
+/* Fix for particle background */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: var(--background, #121212); /* Fallback color */
+}
+
+/* Add footer width consistency fix */
+.footer {
+    width: calc(100% - 4rem); /* Match content width accounting for page padding */
+}
+
+/* Footer color override for projects page */
+.footer:hover {
+    border-color: var(--projects-accent);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.social-icon:hover {
+    color: var(--projects-accent);
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.7);
+}
+
+/* Windows-style window controls override */
+.code-box-header {
+    background-color: #1a1a1a;  /* Darker header for Windows dark theme */
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.code-dots {
+    display: flex;
+    margin-left: auto; /* Push to right side */
+    flex-direction: row-reverse; /* Reverse order for Windows style */
+}
+
+.dot {
+    width: 46px; /* Windows buttons are wider than tall */
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Start with transparent background */
+    color: #909090; /* Windows dark mode icon color */
+    border: none;
+    transition: all 0.2s ease;
+    position: relative;
+    margin-left: 1px; /* Small gap between buttons */
+}
+
+/* Windows dark theme button hover states */
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
+}
+
+.dot:nth-child(1):hover {
+    background-color: #e81123; /* Red on hover for close button */
+    color: white;
+}
+
+.dot:nth-child(2):hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Maximize hover */
+}
+
+.dot:nth-child(3):hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Minimize hover */
+}
+
+/* Remove previous color styling */
+.dot:nth-child(1), 
+.dot:nth-child(2), 
+.dot:nth-child(3) {
+    background-color: transparent;
+}
+
+/* Windows symbols */
+.dot:nth-child(1)::after {
+    content: "×"; /* Close */
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.dot:nth-child(2)::after {
+    content: "□"; /* Maximize */
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.dot:nth-child(3)::after {
+    content: "—"; /* Minimize */
+    font-size: 14px;
+    font-weight: normal;
+    transform: translateY(0px); /* Adjusted position - lowered minimize sign */
+}
+
+/* Rearrange for Windows style (right-aligned) */
+.code-box-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Reorder to match Windows (minimize, maximize, close) */
+.code-dots {
+    order: 2; /* Move to right side */
+}
+
+/* Project page navigation styling */
+.nav-items a.active {
+    border-bottom: 2px solid var(--projects-accent);
+}
+
+.nav-items a.active::before,
+.nav-items a:hover::before {
+    color: var(--projects-accent);
+}
+
+/* Project page navigation styling - update to ensure it works properly */
+.projects-page .nav-items a.active {
+    border-bottom: 2px solid var(--projects-accent);
+}
+
+.projects-page .nav-items a.active::before,
+.projects-page .nav-items a:hover::before {
+    color: var(--projects-accent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-box {
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,466 @@
+:root {
+  --background: #121212;
+  --darker: #0a0a0a;
+  --text: #e0e0e0;
+  --text-muted: #909090;
+  --accent: #00ff9d;
+  --accent-hover: #00cc7d;
+  --secondary-accent: #ff00ff;
+  --highlight: #1e1e1e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Consolas', 'Courier New', monospace;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--darker);
+  border-bottom: 1px solid #333;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent);
+  text-shadow: 0 0 5px rgba(0, 255, 157, 0.5);
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.blink {
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  background-color: var(--accent);
+  margin-left: 5px;
+  animation: blink 1.2s infinite;
+}
+
+.nav-items {
+  display: flex;
+  list-style: none;
+}
+
+.nav-items li {
+  margin-left: 20px;
+  position: relative;
+}
+
+/* Navigation link styling with theme colors */
+.nav-items a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.nav-items a:hover,
+.nav-items a.active {
+  color: var(--text);
+  background-color: var(--highlight);
+}
+
+/* Home page (default) links */
+.nav-items a:hover::before,
+.nav-items a.active::before {
+  opacity: 1;
+  color: var(--accent); /* Green for home */
+}
+
+.nav-items a::before {
+  content: '</>';
+  color: var(--secondary-accent);
+  margin-right: 5px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Home page link active state - fix for home page */
+.nav-items a.active {
+  border-bottom: 2px solid var(--accent);
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+  }
+  
+  .nav-items {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: var(--darker);
+    flex-direction: column;
+    width: 100%;
+    clip-path: circle(2px at 100% 20%);
+    transition: all 0.5s ease-out;
+    pointer-events: none;
+    border-bottom: 1px solid #333;
+  }
+  
+  .nav-items.active {
+    clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+  }
+  
+  .nav-items li {
+    margin: 0;
+    padding: 1rem 2rem;
+    border-top: 1px solid #333;
+  }
+  
+  .nav-items a {
+    padding: 0;
+  }
+  
+  .nav-items a:hover {
+    background-color: transparent;
+  }
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Demonstration content */
+.content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.content p {
+  margin-bottom: 1rem;
+}
+
+.content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.content h1:hover {
+  text-shadow: 0 0 8px rgba(0, 255, 157, 0.7);
+}
+
+
+/* Add this to your CSS file for the code boxes */
+.content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.content h1:hover {
+  text-shadow: 0 0 8px rgba(0, 255, 157, 0.7);
+}
+
+.code-box {
+  background-color: var(--darker);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+.code-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 255, 157, 0.4); /* Added green glow */
+  border-color: var(--accent);
+}
+
+.code-box-header {
+  background-color: #1a1a1a;  /* Darker header for Windows dark theme */
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.code-comment {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.code-dots {
+  display: flex;
+  margin-left: auto; /* Push to right side */
+  flex-direction: row-reverse; /* Reverse order for Windows style */
+}
+
+.dot {
+  width: 46px; /* Windows buttons are wider than tall */
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* Start with transparent background */
+  color: #909090; /* Windows dark mode icon color */
+  border: none;
+  transition: all 0.2s ease;
+  position: relative;
+  margin-left: 1px; /* Small gap between buttons */
+}
+
+/* Windows dark theme button hover states */
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
+}
+
+.dot:nth-child(1):hover {
+  background-color: #e81123; /* Red on hover for close button */
+  color: white;
+}
+
+.dot:nth-child(2):hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Maximize hover */
+}
+
+.dot:nth-child(3):hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Minimize hover */
+}
+
+/* Windows symbols */
+.dot:nth-child(1)::after {
+  content: "×"; /* Close */
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.dot:nth-child(2)::after {
+  content: "□"; /* Maximize */
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.dot:nth-child(3)::after {
+  content: "—"; /* Minimize */
+  font-size: 14px;
+  font-weight: normal;
+  transform: translateY(0px); /* Adjusted position - lowered minimize sign */
+}
+
+.code-box-content {
+  padding: 1.5rem;
+}
+
+.code-box-content h3 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.code-box-content p {
+  color: var(--text);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.code-line {
+  font-family: 'Consolas', 'Courier New', monospace;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  color: var(--text-muted);
+  overflow-x: auto;
+}
+
+.code-keyword {
+  color: #569cd6;
+}
+
+.code-variable {
+  color: #9cdcfe;
+}
+
+.code-string {
+  color: #ce9178;
+}
+
+.code-selector {
+  color: #d7ba7d;
+}
+
+.code-property {
+  color: #9cdcfe;
+}
+
+.code-value {
+  color: #ce9178;
+}
+
+.main-box {
+  margin-bottom: 2rem;
+}
+
+.boxes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .boxes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Add this to your CSS file MOVING BACKGROUND */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--background);
+}
+
+/* Adjust existing content for particles background */
+.navbar {
+  position: relative;
+  z-index: 10;
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+}
+
+.code-box {
+  background-color: rgba(10, 10, 10, 0.8); /* Semi-transparent background */
+  backdrop-filter: blur(3px); /* Slight blur effect for modern browsers */
+}
+
+/* Footer styles */
+.footer {
+  background-color: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(3px);
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 1.5rem 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: calc(100% - 4rem); /* Add this to ensure same width as content */
+  /* This matches the content width accounting for page padding */
+}
+
+.footer:hover {
+  border-color: var(--accent);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.tagline {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+  text-shadow: 0 0 8px rgba(0, 255, 157, 0.7);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .social-links {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+}
